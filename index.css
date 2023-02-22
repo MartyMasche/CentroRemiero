@@ -67,11 +67,12 @@ body {
   #bordo { 
           float:left;
           margin-right: 5px;        
-
-
-
    }
 
+   #foto{ float:left; 
+          margin-right: 5px;
+
+   }
   /* Footer styles */
   footer {
     background-color: #ace6b1;
