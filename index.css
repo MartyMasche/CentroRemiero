@@ -89,4 +89,15 @@ body {
     
   }
 
+  k .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .item {
+    flex: 1 0 200px; /* cambia la larghezza in base alle tue esigenze */
+    margin: 10px;
+  }  
+  
+
 
