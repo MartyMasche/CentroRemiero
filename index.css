@@ -15,6 +15,7 @@ body {
     justify-content: space-between;
     padding: 20px;
   }
+
   
   /*In alto a destra*/
   nav ul {
@@ -88,7 +89,4 @@ body {
     
   }
 
-#logo { float: right;
-        margin-right:10px;
-        margin-left: 10%;
-}
+
