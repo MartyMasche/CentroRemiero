@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registrazione iscritti</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+  <body>
+    <header>
+        <h1>Centro Remiero</h1> <br>
+        
+        <h3>Lago di Pusiano</h3>
+        <nav>
+          <ul>
+            <li><a href="index.HTML">Home</a></li>
+            <li><a href="#">Orari</a></li>
+            <li><a href="servizi.html">Servizi</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+          </ul>
+        </nav>
+      
+    </header>
+    <main>
+      <section>
+    <h1>Registrazione iscritti</h1>
+    <form>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome"><br><br>
+      <label for="cognome">Cognome:</label>
+      <input type="text" id="cognome" name="cognome"><br><br>
+      <label for="dataNascita">Data di nascita:</label>
+      <input type="date" id="dataNascita" name="dataNascita"><br><br>
+      <label for="sport">Sport:</label>
+      <input type="text" id="sport" name="sport"><br><br>
+      <button type="button" onclick="aggiungiIscritto()">Aggiungi iscritto</button>
+    </form>
+    <h2>Elenco iscritti</h2>
+    <ul id="elencoIscritti"></ul>
+    <script src="script.js"></script>
+   </section>
+   </main>
+    <footer>
+        <h1 id="contatti">Contatti</h1>
+        <p>info@centroremierolagodipusiano.it <br>
+           centroremierolagopusiano@pec.it <br>
+           numero di telefono: <br>
+           031 656441
+        </p>
+        <p>Copyright Centro Sportivo Remiero. 
+        </p>
+      </footer>
+    </body>
+    </html>
