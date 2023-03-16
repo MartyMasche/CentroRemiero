@@ -39,6 +39,7 @@ body {
     margin-top: 8px;
     margin-left: 10%;
     
+    
   }
   
   section {
@@ -88,10 +89,22 @@ body {
 
     }
   
+    main{
+      margin-bottom: 205px; /* altezza del footer */
+    }
+    
+    #contatti{color:#696969
+
+    }
+    /*challenge.html*/
+    
+    #gara{
+   
+    }
     /* Footer styles */
     
     footer {
-      position: fixed;      
+      position:fixed;      
       bottom: 0;             /*per bloccare il footer*/
       width: 100%;
       height: 205px; /* altezza del footer */
