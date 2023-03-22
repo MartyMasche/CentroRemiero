@@ -12,7 +12,7 @@ body {
     background-color: #82d4b9;
     color: #0c0c0c;
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     padding: 20px;
   }
 
@@ -38,6 +38,7 @@ body {
   main {
     margin-top: 8px;
     margin-left: 10%;
+    margin-right: 10%;
     
     
   }
@@ -96,20 +97,19 @@ body {
     #contatti{color:#696969
 
     }
-    /*challenge.html*/
     
-    #gara{
-   
+    #spazio {line-height: 30px;
+
     }
+    /*challenge.html*/
+
+ 
     /* Footer styles */
     
-    footer {
-      position:fixed;      
-      bottom: 0;             /*per bloccare il footer*/
+    footer {     
+      bottom: 0;             
       width: 100%;
-      height: 205px; /* altezza del footer */
 
-    
     background-color: #ace6b1;
     color: #696969;
     padding: 20px;
