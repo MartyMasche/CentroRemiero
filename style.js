@@ -27,3 +27,5 @@ function aggiungiIscritto() {
   }
   elenco.innerHTML = elencoHtml;
 }
+
+
