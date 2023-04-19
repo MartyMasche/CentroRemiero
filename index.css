@@ -26,16 +26,17 @@ body {
     display: inline-block;
     position: relative;
   }
-  
+
   nav ul li a {
-    color: #e7e7e7;
+    color: #ffffff;    /*testo menù principale*/
     display: block;
     padding: 10px 20px;
     text-decoration: none;
   }
   
-  nav ul li:hover > ul {
+  nav ul li:hover > ul { /*sbarra laterale*/
     display: block;
+    
   }
   
   nav ul ul {
@@ -49,8 +50,8 @@ body {
   }
   
   nav ul ul li a {
-    background-color: #7cd898;
-    color: #fff;
+    background-color: #6ca17c;
+    color: #ffffff; /*testo scelta*/
     display: block;
     padding: 10px 20px;
   }
@@ -114,7 +115,7 @@ body {
    border: 5px double rgb(98, 98, 99);
    
   }
-  #frase{font-family:WildWest;
+  #frase{font-family: italic;
          font-size:20px;
 
   }
@@ -129,7 +130,7 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  background-color: #333;
+  background-color: #8cc4b1; /*sbarra nav*/
   text-align: center;
 }
 
@@ -140,6 +141,7 @@ nav li {
 }
 
 nav a {
+  background-color: #8cc4b1; /*singli blocchi nav*/
   display: block;
   padding: 10px 20px;
   color: #fff;
@@ -147,7 +149,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #555;
+  background-color: #383838; /* posizione mouse*/
 }
 
 .dropdown-menu {
