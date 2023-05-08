@@ -29,3 +29,42 @@ function aggiungiIscritto() {
 }
 
 
+
+
+$(document).ready(function() {
+	// Controlla se il cookie "cookie_consent" esiste
+	if (getCookie("cookie_consent") === "") {
+		// Se il cookie non esiste, mostra il popup
+		$(".cookie-popup").show();
+	}
+
+	// Aggiungi l'evento al pulsante "Accetta"
+	$(".cookie-accept").click(function() {
+		// Imposta il cookie "cookie_consent" con la data di scadenza a un anno
+		setCookie("cookie_consent", "true", 365);
+		// Nascondi il popup
+		$(".cookie-popup").hide();
+	});
+
+	// Aggiungi l'evento al pulsante "Declina"
+	$(".cookie-decline").click(function() {
+		// Imposta il cookie "cookie_consent" con la data di scadenza a un giorno
+		setCookie("cookie_consent", "false", 1);
+		// Nascondi il popup
+		$(".cookie-popup").hide();
+	});
+
+	// Funzione per impostare un cookie
+	function setCookie(name, value, days) {
+		var expires = "";
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+			expires = "; expires=" + date.toUTCString();
+		}
+		document.cookie = name + "=" + (value || "") + expires + "; path=/";
+	}
+
+	// Funzione per ottenere il valore di un cookie
+	function getCookie(name) {
+		var nameEQ

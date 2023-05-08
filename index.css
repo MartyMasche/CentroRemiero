@@ -56,6 +56,35 @@ body {
     padding: 10px 20px;
   }
  
+
+/* Cookies */
+  .cookie-popup {
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+    display: none;
+  }
+  
+  .cookie-popup p {
+    margin: 0;
+  }
+  
+  .cookie-popup button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+  
+  .cookie-popup button:hover {
+    opacity: 0.8;
+  }
   
   /* Main styles */
   main {
