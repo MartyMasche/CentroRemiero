@@ -31,40 +31,44 @@ function aggiungiIscritto() {
 
 
 
-$(document).ready(function() {
-	// Controlla se il cookie "cookie_consent" esiste
-	if (getCookie("cookie_consent") === "") {
-		// Se il cookie non esiste, mostra il popup
-		$(".cookie-popup").show();
+function setCookie(name, value, days) {
+	var expires = "";
+	if (days) {
+	  var date = new Date();
+	  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+	  expires = "; expires=" + date.toUTCString();
 	}
-
-	// Aggiungi l'evento al pulsante "Accetta"
-	$(".cookie-accept").click(function() {
-		// Imposta il cookie "cookie_consent" con la data di scadenza a un anno
-		setCookie("cookie_consent", "true", 365);
-		// Nascondi il popup
-		$(".cookie-popup").hide();
-	});
-
-	// Aggiungi l'evento al pulsante "Declina"
-	$(".cookie-decline").click(function() {
-		// Imposta il cookie "cookie_consent" con la data di scadenza a un giorno
-		setCookie("cookie_consent", "false", 1);
-		// Nascondi il popup
-		$(".cookie-popup").hide();
-	});
-
-	// Funzione per impostare un cookie
-	function setCookie(name, value, days) {
-		var expires = "";
-		if (days) {
-			var date = new Date();
-			date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-			expires = "; expires=" + date.toUTCString();
-		}
-		document.cookie = name + "=" + (value || "") + expires + "; path=/";
+	document.cookie = name + "=" + (value || "") + expires + "; path=/";
+  }
+  
+  function getCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(";");
+	for (var i = 0; i < ca.length; i++) {
+	  var c = ca[i];
+	  while (c.charAt(0) == " ") c = c.substring(1, c.length);
+	  if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
 	}
-
-	// Funzione per ottenere il valore di un cookie
-	function getCookie(name) {
-		var nameEQ
+	return null;
+  }
+  
+  function acceptCookies() {
+	setCookie("cookiePopupShown", "true", 7);
+	document.getElementById("cookiePopup").style.display = "none";
+  }
+  
+  function rejectCookies() {
+	setCookie("cookiePopupShown", "false", 7);
+	document.getElementById("cookiePopup").style.display = "none";
+  }
+  
+  window.onload = function () {
+	if (getCookie("cookiePopupShown") !== "true") {
+	  document.getElementById("cookiePopup").style.display = "block";
+	}
+	document.getElementById("cookieLink").addEventListener("click", function (e) {
+	  e.preventDefault();
+	  // Inserire qui il link alla pagina di informazioni sui cookie
+	  alert("Pagina di informazioni sui cookie non disponibile.");
+	});
+  };

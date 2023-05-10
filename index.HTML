@@ -9,11 +9,13 @@
     <body>
 
       	<!-- Pop-up per i cookies -->
-	<div class="cookie-popup">
-		<p>Questo sito utilizza i cookies per migliorare la tua esperienza di navigazione. Clicca Accetta per continuare.</p>
-		<button class="cookie-accept">Accetta</button>
-		<button class="cookie-decline">Declina</button>
-	</div>
+        <div id="cookiePopup">
+          <p>Questo sito utilizza i cookie per offrire la migliore esperienza utente possibile. Continuando a navigare su questo sito, acconsenti all'utilizzo dei cookie. <a href="#" id="cookieLink">Scopri di più</a></p>
+          <div id="cookieButtons">
+            <button id="cookieAcceptButton" onclick="acceptCookies()">Accetta</button>
+            <button id="cookieRejectButton" onclick="rejectCookies()">Rifiuta</button>
+          </div>
+        </div>
 <!-- Includi il file JavaScript -->
 <script src="style.js"></script>
       
@@ -37,7 +39,7 @@
             <a href="#">Club house</a>
             <ul class="dropdown-menu">
               <li><a href="home.html">Zona relax</a></li>
-              <li><a href="home.html">Palestre</a></li>
+              <li><a href="palestre.html">Palestre</a></li>
               <li><a href="home.html">Aula didattica</a></li>
               <li><a href="#">Infermeria</a></li>
             </ul>
