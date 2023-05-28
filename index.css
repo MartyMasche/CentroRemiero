@@ -9,7 +9,7 @@ body {
   
   /* Header styles */
   header {
-    background-color: #b0f3dd;
+    background-color: #7eb8d5;
     color: #0c0c0c;
     text-align: center;
     padding: 10px;
@@ -50,7 +50,7 @@ body {
   }
   
   nav ul ul li a {
-    background-color: #6ca17c;
+    background-color: #4698bc;
     color: #ffffff; /*testo scelta*/
     display: block;
     padding: 10px 20px;
@@ -59,39 +59,43 @@ body {
 
 /* Cookies */
 #cookiePopup {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #f2f2f2;
-  padding: 10px;
-  text-align: center;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
 }
 
 #cookiePopup p {
-  margin: 0 0 10px 0;
+  margin-bottom: 10px;
 }
 
 #cookiePopup a {
-  color: #008CBA;
-  text-decoration: none;
+  color: #007bff;
+  text-decoration: underline;
 }
 
-#cookiePopup button {
-  background-color: #008CBA;
+#acceptButton, #rejectButton {
+  background-color: #007bff;
   color: #fff;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
-  margin-right: 10px;
+  margin-top: 10px;
 }
 
-#cookieButtons {
-  display: inline-block;
+#siteContent {
+  display: none;
 }
 
 
@@ -173,7 +177,7 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  background-color: #8cc4b1; /*sbarra nav*/
+  background-color: #056ca4; /*sbarra nav*/
   text-align: center;
 }
 
@@ -184,7 +188,7 @@ nav li {
 }
 
 nav a {
-  background-color: #8cc4b1; /*singli blocchi nav*/
+  background-color: #056ca4; /*singli blocchi nav*/
   display: block;
   padding: 10px 20px;
   color: #fff;
@@ -234,7 +238,7 @@ nav a:hover {
       bottom: 0;             
       width: 100%;
 
-    background-color: #ace6b1;
+    background-color: #7eb8d5;
     color: #696969;
     padding: 20px;
     text-align: center;

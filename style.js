@@ -31,44 +31,24 @@ function aggiungiIscritto() {
 
 
 
-function setCookie(name, value, days) {
-	var expires = "";
-	if (days) {
-	  var date = new Date();
-	  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-	  expires = "; expires=" + date.toUTCString();
-	}
-	document.cookie = name + "=" + (value || "") + expires + "; path=/";
-  }
-  
-  function getCookie(name) {
-	var nameEQ = name + "=";
-	var ca = document.cookie.split(";");
-	for (var i = 0; i < ca.length; i++) {
-	  var c = ca[i];
-	  while (c.charAt(0) == " ") c = c.substring(1, c.length);
-	  if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-	}
-	return null;
-  }
-  
-  function acceptCookies() {
-	setCookie("cookiePopupShown", "true", 7);
-	document.getElementById("cookiePopup").style.display = "none";
-  }
-  
-  function rejectCookies() {
-	setCookie("cookiePopupShown", "false", 7);
-	document.getElementById("cookiePopup").style.display = "none";
-  }
-  
-  window.onload = function () {
-	if (getCookie("cookiePopupShown") !== "true") {
-	  document.getElementById("cookiePopup").style.display = "block";
-	}
-	document.getElementById("cookieLink").addEventListener("click", function (e) {
-	  e.preventDefault();
-	  // Inserire qui il link alla pagina di informazioni sui cookie
-	  alert("Pagina di informazioni sui cookie non disponibile.");
-	});
-  };
+window.addEventListener('DOMContentLoaded', function() {
+  var cookiePopup = document.getElementById('cookiePopup');
+  var acceptButton = document.getElementById('acceptButton');
+  var rejectButton = document.getElementById('rejectButton');
+  var siteContent = document.getElementById('siteContent');
+
+  acceptButton.addEventListener('click', function() {
+    cookiePopup.style.display = 'none';
+    siteContent.style.display = 'block';
+    // Esegui azioni per accettare i cookie...
+  });
+
+  rejectButton.addEventListener('click', function() {
+    if (!siteContent.style.display || siteContent.style.display === 'none') {
+      window.location.href = 'pagina_di_rifiuto_cookie.html';
+    } else {
+      cookiePopup.style.display = 'none';
+      // Esegui azioni per rifiutare i cookie...
+    }
+  });
+});
