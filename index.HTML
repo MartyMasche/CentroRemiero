@@ -9,12 +9,18 @@
     <body>
 
       	<!-- Pop-up per i cookies -->
-        <div id="cookiePopup">
-          <p>Questo sito utilizza i cookie per garantire una migliore esperienza di navigazione. <a href="#">Scopri di più</a></p>
-          <button id="acceptButton">Accetta</button>
-          <button id="rejectButton">Rifiuta</button>
-        </div>
+        <div id="cookie-overlay"></div>
 
+  <div id="cookie-popup">
+    <div id="cookie-content">
+      <p>Questo sito utilizza i cookie per offrirti la migliore esperienza. Accetta o rifiuta i cookie per continuare.</p>
+      <div class="button-group">
+        <button id="accept-cookies">Accetta</button>
+        <button id="reject-cookies">Rifiuta</button>
+      </div>
+      <a href="cookies.html" id="learn-more">Scopri di più sui cookie</a>
+    </div>
+  </div>
 <!-- Includi il file JavaScript -->
 <script src="style.js"></script>
       
@@ -86,14 +92,14 @@
               <li><a href="home.html">Regate Regionali</a></li> 
             </ul>
           </li>
-
+        
           <li class="dropdown">
-            <a href="challenge.html">Rowing Winter Challenge</a>
+            <a href="challenge.html">Rowing winter challenge</a>
             <ul class="dropdown-menu">
-              <li><a href="home.html"></a></li>
-              <li><a href="home.html"></a></li> 
+           
             </ul>
           </li>
+        
     </header>
      
     <main>

@@ -29,26 +29,46 @@ function aggiungiIscritto() {
 }
 
 
+// cookies
 
+document.addEventListener("DOMContentLoaded", function() {
+  var popup = document.getElementById("cookie-popup");
+  var overlay = document.getElementById("cookie-overlay");
+  var acceptButton = document.getElementById("accept-cookies");
+  var rejectButton = document.getElementById("reject-cookies");
+  var learnMoreLink = document.getElementById("learn-more");
 
-window.addEventListener('DOMContentLoaded', function() {
-  var cookiePopup = document.getElementById('cookiePopup');
-  var acceptButton = document.getElementById('acceptButton');
-  var rejectButton = document.getElementById('rejectButton');
-  var siteContent = document.getElementById('siteContent');
+  function hidePopup() {
+    popup.style.display = "none";
+    overlay.style.display = "none";
+    document.body.classList.remove("blur");
+  }
 
-  acceptButton.addEventListener('click', function() {
-    cookiePopup.style.display = 'none';
-    siteContent.style.display = 'block';
-    // Esegui azioni per accettare i cookie...
-  });
+  function acceptCookies() {
+    localStorage.setItem("cookiesAccepted", "true");
+    hidePopup();
+  }
 
-  rejectButton.addEventListener('click', function() {
-    if (!siteContent.style.display || siteContent.style.display === 'none') {
-      window.location.href = 'pagina_di_rifiuto_cookie.html';
-    } else {
-      cookiePopup.style.display = 'none';
-      // Esegui azioni per rifiutare i cookie...
-    }
-  });
+  function rejectCookies() {
+    localStorage.setItem("cookiesAccepted", "false");
+    hidePopup();
+    // Esegui altre azioni per gestire il rifiuto dei cookie
+  }
+
+  function openLearnMore() {
+    // Esegui azioni per mostrare ulteriori informazioni sui cookie
+  }
+
+  acceptButton.addEventListener("click", acceptCookies);
+  rejectButton.addEventListener("click", rejectCookies);
+  learnMoreLink.addEventListener("click", openLearnMore);
+
+  var cookiesAccepted = localStorage.getItem("cookiesAccepted");
+  if (cookiesAccepted === "true") {
+    hidePopup();
+  } else {
+    popup.style.display = "block";
+    overlay.style.display = "block";
+    document.body.classList.add("blur");
+  }
 });
